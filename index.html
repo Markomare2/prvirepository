@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<meta charset="utf-8">
+	<title> Nesto</title>
+</head>
+<body>
+	<script>
+		var app=angular.module("Myshopinglist",[]);
+		app.controller("Mojkontroler",function($scope){
+			$scope.produkti=["mleko","sir","nesto"];
+			$scope.addnesto=function(){
+				$scope.produkti.push($scope.dodaj);
+			}
+		});
+	</script>
+	<div ng-app="Myshopinglist" ng-controller="Mojkontroler">
+		<ul>
+			<li ng-repeat="x in produkti">{{x}}</li>
+		</ul>
+		<input ng-model="dodaj">
+		<button ng-click="addnesto()">Dodaj nesto</button>
+	</div>
+	<p>Kraj programa</p>
+</body>
+</html>
